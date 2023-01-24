@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class FirstSeleniumTest {
     WebDriver driver;
     By emailField = By.cssSelector("[placeholder=\"Email\"]");
+    By passwordField = By.cssSelector("[placeholder=\"Password\"]");
 
 
     //before
@@ -52,7 +53,7 @@ public class FirstSeleniumTest {
         driver.findElement(By.cssSelector("[href=\"/user/registration\"]")).click();
         driver.findElement(By.id("registration-form")).isDisplayed();
         fillField(userData, emailField);
-        fillField(userData, By.cssSelector("[placeholder=\"Password\"]"));
+        fillField(userData, passwordField);
         fillField(userData, By.cssSelector("[ng-reflect-name=\"confirm_password\"]"));
         driver.findElement(By.xpath("//*[@type=\"submit\"]")).click();
     }
