@@ -1,5 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -27,6 +28,16 @@ public class TestBase {
     public void fillField(String userData, By locator) {
         driver.findElement(locator).click();
         driver.findElement(locator).sendKeys(userData);
+    }
+
+    public boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException exception) {
+            exception.printStackTrace();
+            return false;
+        }
     }
 
     @AfterMethod
