@@ -1,7 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -22,7 +22,7 @@ public class FirstSeleniumTest {
 
     @BeforeMethod
     public void setupTest() {
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.get("http://phonebook.telran-edu.de:8080/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
