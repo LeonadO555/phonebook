@@ -40,9 +40,18 @@ public class TestBase {
         }
     }
 
+    public boolean isElementClickable(By by) {
+        try {
+            driver.findElement(by).click();
+            return true;
+        } catch (NoSuchElementException exception) {
+            exception.printStackTrace();
+            return false;
+        }
+    }
+
     @AfterMethod
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(1000);
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }

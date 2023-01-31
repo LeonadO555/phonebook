@@ -9,7 +9,6 @@ public class Login extends TestBase {
     By emailField = By.cssSelector("[placeholder=\"Email\"]");
     By passwordField = By.cssSelector("[placeholder=\"Password\"]");
     By loginButton = By.xpath("//*[@type=\"submit\"]");
-
     By contactsTable = By.id("contacts-list");
 
     @BeforeMethod
