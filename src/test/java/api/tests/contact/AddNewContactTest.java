@@ -10,7 +10,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class AddNewContactTest extends ApiBase {
-    Faker faker = new Faker();
     ContactDto contactDto;
     Response response;
     int id;
