@@ -1,11 +1,29 @@
+package e2e.tests;
+
 import com.github.javafaker.Faker;
+import e2e.MainPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class CreateContactTest extends ChangeLanguage {
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class CreateContactTest extends MainPage {
 
     Faker faker = new Faker();
+
+    @DataProvider
+    public Iterator<Object[]> newContact() {
+        List<Object[]> list = new ArrayList<>();
+        list.add(new Object[]{"Leo", "Mikhailov", "1111"});
+        list.add(new Object[]{"Leo123", "Mikhailov222", "this I 222"});
+        list.add(new Object[]{"Leo456", "Mikhailov333", "this I 333"});
+        return list.iterator();
+    }
+
 
     private void openAddNewContact() {
         driver.findElement(By.cssSelector("[href='/contacts']")).click();
@@ -40,11 +58,9 @@ public class CreateContactTest extends ChangeLanguage {
         Assert.assertEquals(actualCountRow, expectedCountRow);
     }
 
-    @Test
-    public void createNewContact() throws InterruptedException {
-        String firstName = faker.internet().uuid();
-        String lastName = faker.internet().uuid();
-        String description = faker.internet().uuid();
+    //
+    @Test(dataProvider = "newContact")
+    public void createNewContact(String firstName, String lastName, String description) throws InterruptedException {
         Number expectedCountRow = 1;
 
         openAddNewContact();
@@ -54,6 +70,4 @@ public class CreateContactTest extends ChangeLanguage {
         goToContactPageAndFillFilterField(firstName);
         checkCountRows(expectedCountRow);
     }
-
-
 }
