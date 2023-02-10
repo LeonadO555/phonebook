@@ -1,11 +1,11 @@
-package e2e;
+package e2e.helpers;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 
 
-public class Login extends TestBase {
+public class LoginHelpers extends CommonHelpers {
 
     By loginForm = By.id("login-form");
     By emailField = By.cssSelector("[placeholder=\"Email\"]");
@@ -21,7 +21,6 @@ public class Login extends TestBase {
         fillField(email, emailField);
         fillField(password, passwordField);
         driver.findElement(loginButton).click();
-
         Assert.assertTrue(isElementPresent(contactsTable));
     }
 }

@@ -1,17 +1,20 @@
 package e2e;
 
+import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -36,42 +39,29 @@ public class TestBase {
         logger.info("Start test " + m.getName() + " with data: " + Arrays.asList(p));
     }
 
-    public void fillField(String userData, By locator) {
-        driver.findElement(locator).click();
-        driver.findElement(locator).sendKeys(userData);
-    }
+    public String takeScreenshot() throws IOException {
+        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File("reference/screen" + System.currentTimeMillis() + ".png");
 
-    public boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException exception) {
-            exception.printStackTrace();
-            return false;
-        }
-    }
-
-    public boolean isElementClickable(By by) {
-        try {
-            driver.findElement(by).click();
-            return true;
-        } catch (NoSuchElementException exception) {
-            exception.printStackTrace();
-            return false;
-        }
-    }
-
-    public void checkItemText(By locator, String expectedText, String err) {
-        String actualText = driver.findElement(locator).getText();
-        Assert.assertEquals(actualText, expectedText, err);
+        Files.copy(tmp, screenshot);
+        return screenshot.getAbsolutePath();
     }
 
     @AfterMethod
-    public void tearDown(Method m) {
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
-        logger.info("Stop test" + m.getName());
+    }
+
+    @AfterMethod
+    public void stopTest(ITestResult result) throws IOException {
+        if (result.isSuccess()) {
+            logger.info("PASSED" + result.getMethod().getMethodName());
+        } else {
+            logger.info("FAILED" + result.getMethod().getMethodName() + "Screenshot path: " + takeScreenshot());
+        }
+
         logger.info("=========================================================================");
     }
 }

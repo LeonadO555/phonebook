@@ -1,13 +1,13 @@
 package e2e.tests;
 
 import com.github.javafaker.Faker;
-import e2e.MainPage;
+import e2e.helpers.MainHelpers;
 import e2e.utils.DataProviders;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CreateContactTest extends MainPage {
+public class CreateContactTest extends MainHelpers {
 
     Faker faker = new Faker();
 
