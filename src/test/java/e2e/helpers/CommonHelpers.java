@@ -1,11 +1,16 @@
 package e2e.helpers;
 
-import e2e.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class CommonHelpers extends TestBase {
+public class CommonHelpers {
+    WebDriver driver;
+
+    public CommonHelpers(WebDriver driver) {
+        this.driver = driver;
+    }
 
     public void fillField(String userData, By locator) {
         driver.findElement(locator).click();

@@ -21,6 +21,15 @@ public class DataProviders {
     }
 
     @DataProvider
+    public Iterator<Object[]> changeLastNameAndDescription() { // Бкжнт идти, пока не проверят все записи в методе
+        List<Object[]> list = new ArrayList<>(); // переменная не где не использеться и тут пустой масив
+        list.add(new Object[]{"Kelbas", "Best A"});// внизу написано в @TEST
+        list.add(new Object[]{"Sherif", "Best AAA"});// внизу написано в @TEST
+        list.add(new Object[]{"Golof", "Best B"});// внизу написано в @TEST
+        return list.iterator();
+    }
+
+    @DataProvider
     public Iterator<Object[]> newContactWithCSV() throws IOException {
         List<Object[]> list = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/data.csv")));

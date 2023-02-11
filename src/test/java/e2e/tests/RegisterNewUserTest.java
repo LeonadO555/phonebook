@@ -1,14 +1,12 @@
 package e2e.tests;
 
 import com.github.javafaker.Faker;
-import e2e.helpers.CommonHelpers;
-import e2e.helpers.RegisterHelpers;
+import e2e.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RegisterNewUserTest extends CommonHelpers {
+public class RegisterNewUserTest extends TestBase {
     Faker faker = new Faker();
-    public RegisterHelpers registerHelpers = new RegisterHelpers();
 
     //Positive
     @Test
@@ -18,11 +16,11 @@ public class RegisterNewUserTest extends CommonHelpers {
         String password = faker.internet().password();
         String expectedErrorMessage = "noErrorMsg";
         //Act
-        registerHelpers.goToRegistrationPage();
-        registerHelpers.fillRegistrationForm(userData, password);
-        registerHelpers.clickSignUpButton();
+        app.getRegister().goToRegistrationPage();
+        app.getRegister().fillRegistrationForm(userData, password);
+        app.getRegister().clickSignUpButton();
         //Assert
-        registerHelpers.checkErrorMessage(registerHelpers.errorMessageBlock, expectedErrorMessage);
+        app.getRegister().checkErrorMessage(app.getRegister().errorMessageBlock, expectedErrorMessage);
     }
 
 
@@ -36,12 +34,12 @@ public class RegisterNewUserTest extends CommonHelpers {
         String expectedPasswordErrorMessage = "Password must be no longer than 20 characters.";
 
         //Act
-        registerHelpers.goToRegistrationPage();
-        registerHelpers.fillRegistrationForm(userData, password);
-        Assert.assertFalse(isElementPresent(registerHelpers.errorMessageBlock));
+        app.getRegister().goToRegistrationPage();
+        app.getRegister().fillRegistrationForm(userData, password);
+        Assert.assertFalse(app.getRegister().isElementPresent(app.getRegister().errorMessageBlock));
         //Assert
-        registerHelpers.checkErrorMessage(registerHelpers.errorEmailMessageBlock, expectedEmailErrorMessage);
-        registerHelpers.checkErrorMessage(registerHelpers.errorPasswordMaxLengthMessageBlock, expectedPasswordErrorMessage);
+        app.getRegister().checkErrorMessage(app.getRegister().errorEmailMessageBlock, expectedEmailErrorMessage);
+        app.getRegister().checkErrorMessage(app.getRegister().errorPasswordMaxLengthMessageBlock, expectedPasswordErrorMessage);
     }
 
     //Negative
@@ -52,10 +50,10 @@ public class RegisterNewUserTest extends CommonHelpers {
         String password = "test@gmail.com";
         String expectedErrorMessage = "Error! User already exists e2e.helpers.Login now?";
         //Act
-        registerHelpers.goToRegistrationPage();
-        registerHelpers.fillRegistrationForm(userData, password);
-        registerHelpers.clickSignUpButton();
+        app.getRegister().goToRegistrationPage();
+        app.getRegister().fillRegistrationForm(userData, password);
+        app.getRegister().clickSignUpButton();
         //Assert
-        registerHelpers.checkErrorMessage(registerHelpers.errorMessageBlock, expectedErrorMessage);
+        app.getRegister().checkErrorMessage(app.getRegister().errorMessageBlock, expectedErrorMessage);
     }
 }
