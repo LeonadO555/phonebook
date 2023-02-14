@@ -1,8 +1,8 @@
 package api.tests.contact;
 
 import api.enums.EndPoint;
-import api.model.ContactDto;
-import api.model.UpdateContactDto;
+import api.model.contact.ContactDto;
+import api.model.contact.UpdateContactDto;
 import api.tests.ApiBase;
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
