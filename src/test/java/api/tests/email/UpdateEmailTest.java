@@ -5,7 +5,6 @@ import api.model.contact.ContactDto;
 import api.model.email.AddEmailDto;
 import api.model.email.EmailDto;
 import api.tests.ApiBase;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -13,16 +12,19 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class GetEmailByIdTest extends ApiBase {
+public class UpdateEmailTest extends ApiBase {
     Faker faker = new Faker();
     int contactId;
     int emailId;
-    int wrongId;
+    int wrongEmailId;
+    int wrongContactId;
     Response response;
     String email = faker.internet().emailAddress();
+    String newEmail = faker.internet().emailAddress();
     Response responseForEmail;
     ContactDto contactDto;
     AddEmailDto addEmailDto;
+    EmailDto emailDto;
 
     @BeforeMethod
     public void precondition(){
@@ -43,24 +45,40 @@ public class GetEmailByIdTest extends ApiBase {
     }
 
     @Test
-    public void getEmailByEmailIdTest() {
-        response = doGetRequestWithParam(EndPoint.GET_EMAIL_BY_EMAIL_ID, 200, emailId);
-        EmailDto emailDto = response.as(EmailDto.class);
+    public void updateEmail() {
+        emailDto = new EmailDto();
+        emailDto.setId(emailId);
+        emailDto.setEmail(newEmail);
+        emailDto.setContactId(contactId);
 
-        Assert.assertEquals(emailDto.getId(), emailId);
-        Assert.assertEquals(emailDto.getEmail(), email);
-        Assert.assertEquals(emailDto.getContactId(), contactId);
+        doPutRequest(EndPoint.UPDATE_EMAIL, 200, emailDto);
     }
 
     @Test
-    public void getListOfEmailsByContactIdTest() {
-//        Assert.assertTrue(emailId); TODO Проверить наличие и что int
-        Assert.assertEquals(responseForEmail.jsonPath().getString("[0].email"), email);
-        Assert.assertEquals(responseForEmail.jsonPath().getInt("[0].contactId"), contactId);
+    public void updateEmailWithWrongEmailId() {
+        wrongEmailId = getWrongId();
+        emailDto = new EmailDto();
+        emailDto.setId(wrongEmailId);
+        emailDto.setEmail(newEmail);
+        emailDto.setContactId(contactId);
+
+        Response responseForUpdate = doPutRequest(EndPoint.UPDATE_EMAIL, 500, emailDto);
+
+        Assert.assertEquals(responseForUpdate.jsonPath().getString("message"), ERROR_MESSAGE_FOR_EMAIL);
     }
 
+    @Test
+    public void updateEmailWithWrongContactId() {
+        wrongContactId = getWrongId();
+        emailDto = new EmailDto();
+        emailDto.setId(emailId);
+        emailDto.setEmail(newEmail);
+        emailDto.setContactId(wrongContactId);
 
+        Response responseForUpdate = doPutRequest(EndPoint.UPDATE_EMAIL, 500, emailDto);
 
+        Assert.assertEquals(responseForUpdate.jsonPath().getString("message"), ERROR_MESSAGE_FOR_CONTACT);
+    }
 
 
 }

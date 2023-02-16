@@ -57,7 +57,7 @@ public class AddEmailTest extends ApiBase {
 
         response = doPostRequest(EndPoint.ADD_NEW_EMAIL, 500, addEmailDto);
 
-        Assert.assertEquals(response.jsonPath().getString("message"), ERROR_MESSAGE);
+        Assert.assertEquals(response.jsonPath().getString("message"), ERROR_MESSAGE_FOR_CONTACT);
     }
 
 //    @Test

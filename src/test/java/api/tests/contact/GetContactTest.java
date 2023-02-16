@@ -51,7 +51,7 @@ public class GetContactTest extends ApiBase {
     public void getContactByIdWithWrongId() {
         wrongId = getWrongId();
         response = doGetRequestWithParam(EndPoint.GET_CONTACT_BY_CONTACT_ID, 200, wrongId);
-        Assert.assertEquals(response.jsonPath().getString("message"), ERROR_MESSAGE);
+        Assert.assertEquals(response.jsonPath().getString("message"), ERROR_MESSAGE_FOR_CONTACT);
     }
 
 }
