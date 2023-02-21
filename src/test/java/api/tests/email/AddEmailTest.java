@@ -60,10 +60,9 @@ public class AddEmailTest extends ApiBase {
         Assert.assertEquals(response.jsonPath().getString("message"), ERROR_MESSAGE_FOR_CONTACT);
     }
 
-//    @Test
-//    public void addEmailWithEmptyBody() {
-//        addEmailDto = new AddEmailDto();
-//        doPostRequest(EndPoint.ADD_NEW_EMAIL, 400, addEmailDto);
-//    }
-//TODO Разобраться, как сделать пустое тело для запроса
+    @Test
+    public void addEmailWithEmptyBody() {
+        String body = "{}";
+        doPostRequest(EndPoint.ADD_NEW_EMAIL, 400, body);
+    }
 }

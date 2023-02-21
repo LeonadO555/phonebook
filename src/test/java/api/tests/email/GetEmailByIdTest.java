@@ -54,13 +54,9 @@ public class GetEmailByIdTest extends ApiBase {
 
     @Test
     public void getListOfEmailsByContactIdTest() {
-//        Assert.assertTrue(emailId); TODO Проверить наличие и что int
+        Assert.assertNotEquals(responseForEmail.jsonPath().getInt("[0].id"), null);
         Assert.assertEquals(responseForEmail.jsonPath().getString("[0].email"), email);
         Assert.assertEquals(responseForEmail.jsonPath().getInt("[0].contactId"), contactId);
     }
-
-
-
-
 
 }

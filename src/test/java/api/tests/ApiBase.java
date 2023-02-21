@@ -26,10 +26,10 @@ public class ApiBase {
             .addHeader("Access-Token", API_KEY)
             .build();
 
-    public Response doPostRequest(EndPoint endPoint, Integer responseCode, Object dto){
+    public Response doPostRequest(EndPoint endPoint, Integer responseCode, Object body){
         Response resp = RestAssured.given()
                 .spec(spec)
-                .body(dto)
+                .body(body)
                 .when()
                 .log().all()
                 .post(endPoint.getValue())
@@ -77,10 +77,10 @@ public class ApiBase {
         return resp;
     }
 
-    public Response doPutRequest(EndPoint endPoint, Integer responseCode, Object dto){
+    public Response doPutRequest(EndPoint endPoint, Integer responseCode, Object body){
         Response resp = RestAssured.given()
                 .spec(spec)
-                .body(dto)
+                .body(body)
                 .when()
                 .log().all()
                 .put(endPoint.getValue())
