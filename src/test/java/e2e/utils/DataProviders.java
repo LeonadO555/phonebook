@@ -21,11 +21,11 @@ public class DataProviders {
     }
 
     @DataProvider
-    public Iterator<Object[]> changeLastNameAndDescription() { // Бкжнт идти, пока не проверят все записи в методе
-        List<Object[]> list = new ArrayList<>(); // переменная не где не использеться и тут пустой масив
-        list.add(new Object[]{"Kelbas", "Best A"});// внизу написано в @TEST
-        list.add(new Object[]{"Sherif", "Best AAA"});// внизу написано в @TEST
-        list.add(new Object[]{"Golof", "Best B"});// внизу написано в @TEST
+    public Iterator<Object[]> changeLastNameAndDescription() {
+        List<Object[]> list = new ArrayList<>();
+        list.add(new Object[]{"Kelbas", "Best A"});
+        list.add(new Object[]{"Sherif", "Best AAA"});
+        list.add(new Object[]{"Golof", "Best B"});
         return list.iterator();
     }
 

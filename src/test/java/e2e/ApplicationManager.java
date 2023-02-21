@@ -1,7 +1,8 @@
 package e2e;
 
 import com.google.common.io.Files;
-import e2e.helpers.ContactHelpers;
+import e2e.helpers.CreateContactHelpers;
+import e2e.helpers.EditContactHelpers;
 import e2e.helpers.LoginHelpers;
 import e2e.helpers.RegisterHelpers;
 import org.openqa.selenium.OutputType;
@@ -18,7 +19,8 @@ public class ApplicationManager {
 
     LoginHelpers login;
     RegisterHelpers register;
-    ContactHelpers contact;
+    CreateContactHelpers createContact;
+    EditContactHelpers editeContact;
 
     public LoginHelpers getLogin() {
         return login;
@@ -28,8 +30,12 @@ public class ApplicationManager {
         return register;
     }
 
-    public ContactHelpers getContact() {
-        return contact;
+    public CreateContactHelpers getCreateContact() {
+        return createContact;
+    }
+
+    public EditContactHelpers getEditContact() {
+        return editeContact;
     }
 
     protected void init() {
@@ -40,7 +46,8 @@ public class ApplicationManager {
 
         login = new LoginHelpers(driver);
         register = new RegisterHelpers(driver);
-        contact = new ContactHelpers(driver);
+        createContact = new CreateContactHelpers(driver);
+        editeContact = new EditContactHelpers(driver);
     }
 
     public String takeScreenshot() throws IOException {
@@ -52,8 +59,6 @@ public class ApplicationManager {
     }
 
     protected void stop() {
-        if (driver != null) {
-            driver.quit();
-        }
+        driver.quit();
     }
 }
