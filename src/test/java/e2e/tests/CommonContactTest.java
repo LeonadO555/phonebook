@@ -17,7 +17,7 @@ public class CommonContactTest extends TestBase {
         String lastName = faker.internet().uuid();
         String description = faker.lorem().paragraph(1);
         Number expectedCountRow = 1;
-        app.getLogin().startRecording();
+//        app.getLogin().startRecording();
         app.getLogin().login();
 
         app.getCreateContact().changeLanguage();
@@ -43,6 +43,6 @@ public class CommonContactTest extends TestBase {
         getRemoveContact.openRemoveContactDialog();
         getRemoveContact.removeContact();
         getRemoveContact.checkCountRows(0);
-        app.getLogin().stopRecording();
+//        app.getLogin().stopRecording();
     }
 }

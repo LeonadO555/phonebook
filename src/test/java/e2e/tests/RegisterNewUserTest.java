@@ -5,9 +5,6 @@ import e2e.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.awt.*;
-import java.io.IOException;
-
 public class RegisterNewUserTest extends TestBase {
     Faker faker = new Faker();
 
@@ -29,7 +26,7 @@ public class RegisterNewUserTest extends TestBase {
 
     //Negative
     @Test
-    public void registerNewUserWithInvalidData() throws IOException, AWTException, InterruptedException {
+    public void registerNewUserWithInvalidData() {
         //Arrange
         String userData = faker.internet().password();
         String password = faker.internet().emailAddress();
