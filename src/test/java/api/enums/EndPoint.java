@@ -17,4 +17,5 @@ public enum EndPoint {
     UPDATE_EMAIL("/api/email"),
     ADD_NEW_ADDRESS("/api/address");
     private final String value;
+
 }

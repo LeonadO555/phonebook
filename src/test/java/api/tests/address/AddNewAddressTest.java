@@ -69,8 +69,6 @@ public class AddNewAddressTest extends ApiBase {
         response = doPostRequest(EndPoint.ADD_NEW_ADDRESS, 500, addressDto);
 
         Assert.assertEquals(response.jsonPath().getString("message"), ERROR_MESSAGE_FOR_CONTACT);
-        // TODO Разобраться почему вставляет contactId = 0
-        // разобраться именно с int
     }
 
 }
