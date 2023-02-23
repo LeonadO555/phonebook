@@ -5,16 +5,19 @@ import e2e.TestBase;
 import e2e.helpers.EditContactHelpers;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.io.IOException;
+
 public class CommonContactTest extends TestBase {
     Faker faker = new Faker();
 
     @Test
-    public void userCanCreateEditRemoveContact() throws InterruptedException {
+    public void userCanCreateEditRemoveContact() throws InterruptedException, IOException, AWTException {
         String firstName = faker.internet().uuid();
         String lastName = faker.internet().uuid();
         String description = faker.lorem().paragraph(1);
         Number expectedCountRow = 1;
-
+        app.getLogin().startRecording();
         app.getLogin().login();
 
         app.getCreateContact().changeLanguage();
@@ -40,5 +43,6 @@ public class CommonContactTest extends TestBase {
         getRemoveContact.openRemoveContactDialog();
         getRemoveContact.removeContact();
         getRemoveContact.checkCountRows(0);
+        app.getLogin().stopRecording();
     }
 }
