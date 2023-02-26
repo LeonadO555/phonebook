@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">11.793s</div>
+<div class="counter">11.702s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">66%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,79 +61,16 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
+<a href="#tab1">Standard output</a>
 </li>
 <li>
-<a href="#tab2">Standard output</a>
-</li>
-<li>
-<a href="#tab3">Standard error</a>
+<a href="#tab2">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="registerExistingUser"></a>
-<h3 class="failures">registerExistingUser</h3>
-<span class="code">
-<pre>java.lang.AssertionError: Actual error message is not equal expected expected [Error! User already exists e2e.helpers.Login now?] but found [Error! User already exists Login now?]
-	at org.testng.Assert.fail(Assert.java:97)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:575)
-	at e2e.helpers.CommonHelpers.checkItemText(CommonHelpers.java:55)
-	at e2e.helpers.RegisterHelpers.checkErrorMessage(RegisterHelpers.java:43)
-	at e2e.tests.RegisterNewUserTest.registerExistingUser(RegisterNewUserTest.java:57)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:766)
-	at org.testng.TestRunner.run(TestRunner.java:587)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
-	at org.testng.TestNG.runSuites(TestNG.java:1039)
-	at org.testng.TestNG.run(TestNG.java:1007)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:146)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:91)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -144,68 +81,68 @@
 </tr>
 </thead>
 <tr>
-<td class="failures">registerExistingUser</td>
-<td class="failures">0.694s</td>
-<td class="failures">failed</td>
+<td class="success">registerExistingUser</td>
+<td class="success">0.614s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">registerNewUserWithInvalidData</td>
-<td class="success">10.498s</td>
+<td class="success">10.473s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">registerNewUserWithValidData</td>
-<td class="success">0.601s</td>
+<td class="success">0.615s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>13:50:30.630 [Test worker] DEBUG i.g.b.wdm.cache.ResolutionCache -- Resolution chrome=110 in cache (valid until 13:51:43 21/02/2023 GET)
-13:50:30.630 [Test worker] DEBUG i.g.b.wdm.cache.ResolutionCache -- Resolution chrome110=110.0.5481.77 in cache (valid until 12:51:43 22/02/2023 GET)
-13:50:30.631 [Test worker] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
-13:50:30.638 [Test worker] DEBUG i.g.bonigarcia.wdm.WebDriverManager -- Driver chromedriver 110.0.5481.77 found in cache
-13:50:30.640 [Test worker] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as /Users/leo/.cache/selenium/chromedriver/mac-arm64/110.0.5481.77/chromedriver
-13:50:30.641 [Test worker] INFO  e2e.TestBase -- Setup chrome driver
-13:50:37.959 [Test worker] INFO  e2e.TestBase -- Start test registerExistingUser with data: []
-13:50:38.963 [Test worker] INFO  e2e.TestBase -- FAILEDregisterExistingUserScreenshot path: /Users/leo/IdeaProjects/phonebook/reference/screen1676973038958.png
-13:50:38.963 [Test worker] INFO  e2e.TestBase -- =========================================================================
-13:50:42.922 [Test worker] INFO  e2e.TestBase -- Start test registerNewUserWithInvalidData with data: []
-13:50:53.422 [Test worker] INFO  e2e.TestBase -- PASSEDregisterNewUserWithInvalidData
-13:50:53.423 [Test worker] INFO  e2e.TestBase -- =========================================================================
-13:50:57.276 [Test worker] INFO  e2e.TestBase -- Start test registerNewUserWithValidData with data: []
-13:50:57.879 [Test worker] INFO  e2e.TestBase -- PASSEDregisterNewUserWithValidData
-13:50:57.879 [Test worker] INFO  e2e.TestBase -- =========================================================================
+<pre>04:45:12.611 [Test worker] DEBUG i.g.b.wdm.cache.ResolutionCache -- Resolution chrome=110 in cache (valid until 05:17:19 23/02/2023 GET)
+04:45:12.611 [Test worker] DEBUG i.g.b.wdm.cache.ResolutionCache -- Resolution chrome110=110.0.5481.77 in cache (valid until 00:48:11 24/02/2023 GET)
+04:45:12.611 [Test worker] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
+04:45:12.617 [Test worker] DEBUG i.g.bonigarcia.wdm.WebDriverManager -- Driver chromedriver 110.0.5481.77 found in cache
+04:45:12.618 [Test worker] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as /Users/leo/.cache/selenium/chromedriver/mac-arm64/110.0.5481.77/chromedriver
+04:45:12.618 [Test worker] INFO  e2e.TestBase -- Setup chrome driver
+04:45:17.293 [Test worker] INFO  e2e.TestBase -- Start test registerExistingUser with data: []
+04:45:17.909 [Test worker] INFO  e2e.TestBase -- PASSEDregisterExistingUser
+04:45:17.909 [Test worker] INFO  e2e.TestBase -- =========================================================================
+04:45:23.540 [Test worker] INFO  e2e.TestBase -- Start test registerNewUserWithInvalidData with data: []
+04:45:34.014 [Test worker] INFO  e2e.TestBase -- PASSEDregisterNewUserWithInvalidData
+04:45:34.015 [Test worker] INFO  e2e.TestBase -- =========================================================================
+04:45:37.768 [Test worker] INFO  e2e.TestBase -- Start test registerNewUserWithValidData with data: []
+04:45:38.385 [Test worker] INFO  e2e.TestBase -- PASSEDregisterNewUserWithValidData
+04:45:38.386 [Test worker] INFO  e2e.TestBase -- =========================================================================
 </pre>
 </span>
 </div>
-<div id="tab3" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Starting ChromeDriver 110.0.5481.77 (65ed616c6e8ee3fe0ad64fe83796c020644d42af-refs/branch-heads/5481@{#839}) on port 39363
+<pre>Starting ChromeDriver 110.0.5481.77 (65ed616c6e8ee3fe0ad64fe83796c020644d42af-refs/branch-heads/5481@{#839}) on port 48150
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1676973032.778][WARNING]: virtual void DevToolsClientImpl::AddListener(DevToolsEventListener *) subscribing a listener to the already connected DevToolsClient. Connection notification will not arrive.
-Feb 21, 2023 1:50:32 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1677113113.620][WARNING]: virtual void DevToolsClientImpl::AddListener(DevToolsEventListener *) subscribing a listener to the already connected DevToolsClient. Connection notification will not arrive.
+Feb 23, 2023 4:45:13 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Starting ChromeDriver 110.0.5481.77 (65ed616c6e8ee3fe0ad64fe83796c020644d42af-refs/branch-heads/5481@{#839}) on port 18707
+Starting ChromeDriver 110.0.5481.77 (65ed616c6e8ee3fe0ad64fe83796c020644d42af-refs/branch-heads/5481@{#839}) on port 13380
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1676973040.138][WARNING]: virtual void DevToolsClientImpl::AddListener(DevToolsEventListener *) subscribing a listener to the already connected DevToolsClient. Connection notification will not arrive.
-Feb 21, 2023 1:50:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1677113118.721][WARNING]: virtual void DevToolsClientImpl::AddListener(DevToolsEventListener *) subscribing a listener to the already connected DevToolsClient. Connection notification will not arrive.
+Feb 23, 2023 4:45:18 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#error\-message&quot;}
   (Session info: chrome=110.0.5481.100)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'MacBook-Pro-Leonid.local', ip: 'fe80:0:0:0:103d:d8eb:d747:5cca%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.2', java.version: '18'
+System info: host: 'MacBook-Pro-Leonid.local', ip: 'fe80:0:0:0:1c6e:223d:5594:f4dd%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.2', java.version: '18'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 110.0.5481.100, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /var/folders/m6/8rpbbhz94_5...}, goog:chromeOptions: {debuggerAddress: localhost:60570}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 16c9fd4a28ce1fa6e5bddaba85cf20d9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 110.0.5481.100, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /var/folders/m6/8rpbbhz94_5...}, goog:chromeOptions: {debuggerAddress: localhost:51546}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d699a6e63c1f55e47e69825c6a02e0ad
 *** Element info: {Using=id, value=error-message}
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
@@ -220,7 +157,7 @@ Session ID: 16c9fd4a28ce1fa6e5bddaba85cf20d9
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
 	at org.openqa.selenium.By$ById.findElement(By.java:188)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at e2e.helpers.CommonHelpers.isElementPresent(CommonHelpers.java:44)
+	at e2e.helpers.CommonHelpers.isElementPresent(CommonHelpers.java:80)
 	at e2e.tests.RegisterNewUserTest.registerNewUserWithInvalidData(RegisterNewUserTest.java:39)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
@@ -264,12 +201,12 @@ Session ID: 16c9fd4a28ce1fa6e5bddaba85cf20d9
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Starting ChromeDriver 110.0.5481.77 (65ed616c6e8ee3fe0ad64fe83796c020644d42af-refs/branch-heads/5481@{#839}) on port 46231
+Starting ChromeDriver 110.0.5481.77 (65ed616c6e8ee3fe0ad64fe83796c020644d42af-refs/branch-heads/5481@{#839}) on port 27730
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1676973054.490][WARNING]: virtual void DevToolsClientImpl::AddListener(DevToolsEventListener *) subscribing a listener to the already connected DevToolsClient. Connection notification will not arrive.
-Feb 21, 2023 1:50:54 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1677113134.847][WARNING]: virtual void DevToolsClientImpl::AddListener(DevToolsEventListener *) subscribing a listener to the already connected DevToolsClient. Connection notification will not arrive.
+Feb 23, 2023 4:45:34 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 </pre>
 </span>
@@ -282,7 +219,7 @@ INFO: Detected dialect: W3C
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5.1</a> at Feb 21, 2023, 1:50:59 PM</p>
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at Feb 23, 2023, 4:45:38 AM</p>
 </div>
 </div>
 </body>

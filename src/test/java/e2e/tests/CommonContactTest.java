@@ -29,7 +29,7 @@ public class CommonContactTest extends TestBase {
         String newFirstName = faker.internet().uuid();
         String newLastName = faker.internet().uuid();
         String newDescription = faker.lorem().paragraph(1);
-
+        
         app.getEditContact().goToContactPageAndFillFilterField(firstName);
         app.getEditContact().checkCountRows(expectedCountRow);
         app.getEditContact().openContact();

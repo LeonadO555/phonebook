@@ -57,6 +57,15 @@ public class CommonHelpers {
         screenRecorder.stop();
     }
 
+    public String deleteFiles(String folder) {
+        File directory = new File(folder);
+        File[] files = directory.listFiles();
+        for (File f : files) {
+            f.delete();
+        }
+        return "deleted all files: " + folder;
+    }
+
 
     public void clickOnVisibleElement(By locator) {
         Assert.assertTrue(isElementPresent(locator));
