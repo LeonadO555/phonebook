@@ -15,6 +15,7 @@ import org.testng.Assert;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import static org.monte.media.FormatKeys.*;
 import static org.monte.media.VideoFormatKeys.*;
@@ -24,13 +25,15 @@ public class CommonHelpers {
     public WebDriverWait wait;
     public ScreenRecorder screenRecorder;
 
+    Duration TIMEOUT = Duration.ofSeconds(10);
+
 
     public CommonHelpers(WebDriver driver) {
         this.driver = driver;
     }
 
     public WebDriverWait setWait() {
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, TIMEOUT);
         return wait;
     }
 
