@@ -5,7 +5,6 @@ import e2e.helpers.CreateContactHelpers;
 import e2e.helpers.EditContactHelpers;
 import e2e.helpers.LoginHelpers;
 import e2e.helpers.RegisterHelpers;
-import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -42,8 +41,6 @@ public class ApplicationManager {
     }
 
     protected void init() throws MalformedURLException {
-        FirefoxDriverManager.firefoxdriver().setup();
-//        driver = new ChromeDriver();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //***********Chrome*********** */
         //capabilities.setBrowserName("chrome");
