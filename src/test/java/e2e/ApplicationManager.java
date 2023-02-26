@@ -39,6 +39,7 @@ public class ApplicationManager {
     }
 
     protected void init() {
+        System.setProperty("webdriver.chrome.driver", "/Users/leo/Downloads/chromedriver_mac64/chromedriver");
 //        ChromeDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("http://phonebook.telran-edu.de:8080/");
