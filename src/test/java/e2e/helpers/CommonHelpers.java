@@ -8,6 +8,7 @@ import org.monte.screenrecorder.ScreenRecorder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -21,7 +22,7 @@ import static org.monte.media.FormatKeys.*;
 import static org.monte.media.VideoFormatKeys.*;
 
 public class CommonHelpers {
-    WebDriver driver;
+    RemoteWebDriver driver;
     public WebDriverWait wait;
     public ScreenRecorder screenRecorder;
 
@@ -29,7 +30,7 @@ public class CommonHelpers {
 
 
     public CommonHelpers(WebDriver driver) {
-        this.driver = driver;
+        this.driver = (RemoteWebDriver) driver;
     }
 
     public WebDriverWait setWait() {
