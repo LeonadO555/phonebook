@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.util.Arrays;
 
 public class TestBase {
@@ -16,7 +17,7 @@ public class TestBase {
     protected static ApplicationManager app = new ApplicationManager();
 
     @BeforeMethod
-    public void setupTest() {
+    public void setupTest() throws MalformedURLException {
         app.init();
     }
 
