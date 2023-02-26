@@ -5,18 +5,17 @@ import e2e.helpers.CreateContactHelpers;
 import e2e.helpers.EditContactHelpers;
 import e2e.helpers.LoginHelpers;
 import e2e.helpers.RegisterHelpers;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-    public RemoteWebDriver driver;
+    public WebDriver driver;
 
     LoginHelpers login;
     RegisterHelpers register;
@@ -40,7 +39,7 @@ public class ApplicationManager {
     }
 
     protected void init() {
-        WebDriverManager.chromedriver().setup();
+//        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("http://phonebook.telran-edu.de:8080/");
         driver.manage().window().maximize();
