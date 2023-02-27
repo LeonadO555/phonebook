@@ -54,7 +54,7 @@ public class ApplicationManager {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableLog", true);
         driver = new RemoteWebDriver(
-                URI.create("http://127.0.0.1:4444/wd/hub").toURL(),
+                URI.create("http://selenoid:4444/wd/hub").toURL(),
                 capabilities);
         driver.get("http://phonebook.telran-edu.de:8080/");
         driver.manage().window().maximize();
