@@ -12,7 +12,7 @@ public class RegisterNewUserTest extends TestBase {
     Faker faker = new Faker();
 
     //Positive
-    @Test
+    @Test(priority = 2)
     public void registerNewUserWithValidData() {
         //Arrange
         String userData = faker.internet().emailAddress();
@@ -28,7 +28,7 @@ public class RegisterNewUserTest extends TestBase {
 
 
     //Negative
-    @Test
+    @Test(priority = 3)
     public void registerNewUserWithInvalidData() {
         //Arrange
         String userData = faker.internet().password();
@@ -46,7 +46,7 @@ public class RegisterNewUserTest extends TestBase {
     }
 
     //Negative
-    @Test
+    @Test(priority = 4)
     public void registerExistingUser() throws IOException, AWTException, InterruptedException {
         //Arrange
         String userData = "test@gmail.com";

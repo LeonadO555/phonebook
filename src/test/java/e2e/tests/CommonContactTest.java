@@ -11,7 +11,7 @@ import java.io.IOException;
 public class CommonContactTest extends TestBase {
     Faker faker = new Faker();
 
-    @Test
+    @Test(priority = 1)
     public void userCanCreateEditRemoveContact() throws InterruptedException, IOException, AWTException {
         String firstName = faker.internet().uuid();
         String lastName = faker.internet().uuid();
@@ -29,7 +29,7 @@ public class CommonContactTest extends TestBase {
         String newFirstName = faker.internet().uuid();
         String newLastName = faker.internet().uuid();
         String newDescription = faker.lorem().paragraph(1);
-        
+
         app.getEditContact().goToContactPageAndFillFilterField(firstName);
         app.getEditContact().checkCountRows(expectedCountRow);
         app.getEditContact().openContact();
