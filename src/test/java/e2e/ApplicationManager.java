@@ -44,15 +44,15 @@ public class ApplicationManager {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 //        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        //***********Chrome*********** */
-//        //capabilities.setBrowserName("chrome");
-//        //capabilities.setVersion("76.0");
-//        //***********FireFox***********/
+        //***********Chrome*********** */
+        //capabilities.setBrowserName("chrome");
+        //capabilities.setVersion("76.0");
+        //***********FireFox***********/
 //        capabilities.setBrowserName("firefox");
 //        capabilities.setVersion("90.0");
-//        //***********Opera*********** */
-////        capabilities.setBrowserName("chrome");
-////        capabilities.setVersion("62.0");
+        //***********Opera*********** */
+//        capabilities.setBrowserName("chrome");
+//        capabilities.setVersion("62.0");
 //        capabilities.setCapability("enableVNC", true);
 //        capabilities.setCapability("enableLog", true);
 //        driver = new RemoteWebDriver(

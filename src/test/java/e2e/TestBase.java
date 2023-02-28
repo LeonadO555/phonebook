@@ -6,7 +6,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.util.Arrays;
@@ -32,12 +31,12 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void stopTest(ITestResult result) throws IOException {
-//        if (result.isSuccess()) {
-//            logger.info("PASSED" + result.getMethod().getMethodName() + app.getRegister().deleteFiles("records"));
-//        } else {
-//            logger.info("FAILED" + result.getMethod().getMethodName() + "Screenshot path: " + app.takeScreenshot());
-//        }
+    public void stopTest(ITestResult result) {
+        if (result.isSuccess()) {
+            logger.info("PASSED" + result.getMethod().getMethodName());
+        } else {
+            logger.info("FAILED" + result.getMethod().getMethodName());
+        }
 
         logger.info("=========================================================================");
     }
