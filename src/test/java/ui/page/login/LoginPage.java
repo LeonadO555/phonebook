@@ -3,7 +3,6 @@ package ui.page.login;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import ui.page.PageBase;
 
 public class LoginPage extends PageBase {
