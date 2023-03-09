@@ -3,6 +3,7 @@ package ui.tests.contact;
 import api.enums.EndPoint;
 import api.model.contact.ContactDto;
 import io.restassured.response.Response;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,8 +19,7 @@ public class AddNewPhoneTest extends TestBase {
     LoginPage loginPage;
     ContactPage contactPage;
     PhoneTab phoneTab;
-
-
+    String phoneNumber = faker.number().digits(8).toString();
 
 
     @BeforeMethod
@@ -41,7 +41,13 @@ public class AddNewPhoneTest extends TestBase {
         contactPage = new ContactPage(driver);
         contactPage.getPage(contactPage.getBASE_PAGE_URL() + id);
         contactPage.click(contactPage.getPhoneTab());
+        phoneTab = new PhoneTab(driver);
+        phoneTab.click(phoneTab.getAddPhoneNumber());
+        phoneTab.selectOption(" Antigua and Barbuda (+1268) ", phoneTab.getCountryCodeSelect());
+        phoneTab.inputText(phoneTab.getPhoneNumberInput(), phoneNumber);
+        phoneTab.click(phoneTab.getSaveButton());
 
+        Assert.assertEquals(phoneTab.getTex(phoneTab.getPhoneNumberField()), phoneNumber);
     }
 
 

@@ -14,16 +14,16 @@ public class ContactPage extends PageBase {
 
     private final String BASE_PAGE_URL = "http://phonebook.telran-edu.de:8080/contacts/";
 
-    @FindBy(xpath = "//a[@id=\"ngb-nav-2\"]")
+    @FindBy(xpath = "//ul[@role=\"tablist\"]/li[@ng-reflect-_id=1]")
     private WebElement infoTab;
 
-    @FindBy(xpath = "//a[@id=\"ngb-nav-3\"]")
+    @FindBy(xpath = "//ul[@role=\"tablist\"]/li[@ng-reflect-_id=2]")
     private WebElement phoneTab;
 
-    @FindBy(xpath = "//a[@id=\"ngb-nav-4\"]")
+    @FindBy(xpath = "//ul[@role=\"tablist\"]/li[@ng-reflect-_id=3]")
     private WebElement emailTab;
 
-    @FindBy(xpath = "//a[@id=\"ngb-nav-5\"]")
+    @FindBy(xpath = "//ul[@role=\"tablist\"]/li[@ng-reflect-_id=4]")
     private WebElement addressTab;
 
 }
