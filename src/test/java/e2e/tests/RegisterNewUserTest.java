@@ -12,7 +12,7 @@ public class RegisterNewUserTest extends TestBase {
     Faker faker = new Faker();
 
     //Positive
-    @Test(priority = 2)
+    @Test()
     public void registerNewUserWithValidData() {
         //Arrange
         String userData = faker.internet().emailAddress();
